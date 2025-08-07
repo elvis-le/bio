@@ -1,0 +1,144 @@
+.sidebar {
+    background-color: $sidebar-bg;
+    width: $sidebar-width;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-between;
+    height: 100%;
+}
+
+.sidebar-profile {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    border-radius: $border-radius-md;
+    &:hover {
+        background-color: #f3f4f6;
+    }
+    .profile-avatar img {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+    }
+    .profile-name {
+        font-weight: 600;
+        margin-right: auto; 
+    }
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem; 
+}
+
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.6rem 0.75rem;
+    border-radius: $border-radius-md;
+    cursor: pointer;
+    font-weight: 500;
+    color: $text-secondary-color;
+
+    &:hover {
+        background-color: #f3f4f6;
+    }
+
+    
+    &.active {
+        background-color: #f3f4f6;
+        color: $text-color;
+        font-weight: 600;
+    }
+}
+
+
+.nav-group {
+    .nav-group-header {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.6rem 0.75rem;
+        font-weight: 600;
+
+        .arrow {
+            margin-left: auto; 
+            color: $text-secondary-color;
+        }
+    }
+}
+
+
+.nav-submenu {
+    list-style: none;
+    padding-left: 1rem; 
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+
+.tools-section {
+    margin-top: 1.5rem;
+    .tools-title {
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: $text-secondary-color;
+        padding: 0 0.75rem 0.5rem;
+    }
+}
+
+
+
+.sidebar-footer {
+    
+}
+
+.sidebar-cta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background-color: #f3f4f6;
+    border: 1px solid $border-color;
+    border-radius: $border-radius-lg;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+
+    .cta-icon-plant { font-size: 1.5rem; }
+    .cta-text {
+        display: flex;
+        flex-direction: column;
+        strong { font-size: 0.9rem; }
+        span {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: $primary-color;
+        }
+    }
+}
+
+.footer-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    color: $text-secondary-color;
+
+    svg {
+        cursor: pointer;
+        &:hover { color: $text-color; }
+    }
+}

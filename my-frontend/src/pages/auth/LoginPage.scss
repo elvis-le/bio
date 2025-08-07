@@ -1,0 +1,258 @@
+// Biến màu sắc và font chữ
+$primary-color: #6a11cb;
+$secondary-color: #2575fc;
+$background-color: #f0f2f5;
+$form-background: #ffffff;
+$text-color: #6c757d;
+$input-border-color: #e0e0e0;
+$white-color: #ffffff;
+$font-family: 'Poppins', sans-serif; // Hãy chắc chắn đã import font này trong public/index.html
+
+// --- Main Styles ---
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: $background-color;
+  font-family: $font-family;
+  padding: 1rem;
+}
+
+.login-container {
+  display: flex;
+  width: 100%;
+  max-width: 900px;
+  min-height: 550px;
+  background-color: $form-background;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+}
+
+// --- Phần Form (Bên trái) ---
+.login-form {
+  flex-basis: 50%;
+  padding: 3rem 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 2;
+
+  .form-header {
+    margin-bottom: 2rem;
+    h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      color: #333;
+    }
+    p {
+      color: $text-color;
+      font-size: 0.9rem;
+    }
+  }
+
+  .input-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+
+    .input-icon {
+      position: absolute;
+      left: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: $text-color;
+    }
+
+    .input-icon-right {
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: $text-color;
+        cursor: pointer;
+    }
+
+    input {
+      width: 100%;
+      padding: 0.9rem 1rem 0.9rem 2.5rem;
+      border: 1px solid $input-border-color;
+      border-radius: 25px;
+      font-size: 0.9rem;
+      outline: none;
+      transition: border-color 0.3s;
+
+      &:focus {
+        border-color: $primary-color;
+      }
+    }
+  }
+
+  .form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    margin-bottom: 1.5rem;
+
+    .remember-me {
+      display: flex;
+      align-items: center;
+      color: $text-color;
+      cursor: pointer;
+      input {
+        margin-right: 0.5rem;
+      }
+    }
+
+    .forgot-password {
+      color: $text-color;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .signin-btn {
+    width: 100%;
+    padding: 0.9rem;
+    border: none;
+    border-radius: 25px;
+    background: linear-gradient(45deg, $primary-color, $secondary-color);
+    color: $white-color;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s;
+
+    &:hover {
+        transform: scale(1.02);
+    }
+  }
+
+  .create-account {
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: $text-color;
+
+    a {
+      color: $primary-color;
+      font-weight: 600;
+      text-decoration: none;
+    }
+  }
+}
+
+// --- Phần Welcome (Bên phải) ---
+.welcome-section {
+  flex-basis: 50%;
+  background: linear-gradient(45deg, $primary-color, $secondary-color);
+  color: $white-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+  text-align: left;
+  position: relative;
+
+  // Hiệu ứng đám mây
+  &::before {
+    content: '';
+    position: absolute;
+    top: -7%;
+    left: -25%;
+    width: 210%;
+    height: 110%;
+    background: $form-background;
+    transform: translateX(-40%);
+    box-shadow: 20px 0 0 $form-background, 40px 10px 0 $form-background;
+    clip-path: polygon(50% 0%, 50% 0%, 100% 100%, 50% 100%);
+    z-index: 1;
+  }
+
+  .welcome-content {
+      position: relative;
+    color: black;
+      z-index: 2;
+      h2 {
+          font-size: 2.5rem;
+          font-weight: 700;
+          margin-bottom: 1rem;
+      }
+      p {
+          font-size: 1rem;
+          line-height: 1.6;
+      }
+  }
+}
+
+// --- Responsive Design (Media Queries) ---
+
+// iPad Pro, iPad
+@media (max-width: 1024px) {
+    .login-container {
+        max-width: 800px;
+    }
+    .login-form {
+        padding: 2.5rem;
+    }
+}
+
+// Điện thoại & iPad (chiều dọc)
+@media (max-width: 768px) {
+  .login-container {
+    flex-direction: column;
+    min-height: auto;
+    max-width: 500px;
+    margin: 2rem 0;
+  }
+
+  .welcome-section {
+    order: 1; // Đưa phần welcome lên trên
+    flex-basis: auto;
+    min-height: 250px;
+    padding: 2rem;
+
+    &::before {
+        // Điều chỉnh lại hình dạng đám mây cho chiều dọc
+        top: auto;
+        bottom: -25%;
+        left: -5%;
+        width: 110%;
+        height: 150%;
+        transform: translateY(-50%);
+        clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0 100%);
+    }
+
+    .welcome-content {
+        text-align: center;
+        h2 {
+            font-size: 2rem;
+        }
+    }
+  }
+
+  .login-form {
+    order: 2; // Đưa form xuống dưới
+    flex-basis: auto;
+    padding: 2rem;
+  }
+}
+
+// Điện thoại nhỏ
+@media (max-width: 480px) {
+    .login-page {
+        padding: 0.5rem;
+    }
+    .login-form {
+        padding: 2rem 1.5rem;
+    }
+    .form-options {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+}

@@ -1,0 +1,131 @@
+// src/styles/pages/_product-page.scss
+
+// --- Nền Trang ---
+.product-page-background {
+    // Màu nền nâu đậm hơn cho toàn trang
+    background-color: #d3c4b4;
+    min-height: 100vh;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+// --- Khung Nội Dung Chính ---
+.page-container {
+    width: 100%;
+    max-width: 768px;
+    position: relative;
+
+    // THAY ĐỔI CHÍNH: Thêm nền và bo góc cho khung nội dung
+    background-color: $product-bg; // Màu nền cam nhạt hơn
+    border-radius: 24px;      // Bo góc lớn
+    padding: 3rem;            // Tạo khoảng cách bên trong khung
+}
+
+// --- Các Nút Ở Góc ---
+.top-actions {
+    position: absolute; // Đặt vị trí tương đối với .page-container
+    top: 1.5rem;
+    left: 1.5rem;
+    right: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+
+    .top-icon-btn {
+        background-color: rgba(255, 255, 255, 0.8);
+        border: none;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+        cursor: pointer;
+        backdrop-filter: blur(5px);
+    }
+}
+
+// --- Header Profile ---
+.profile-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0;
+    padding-top: 3rem; // Thêm khoảng trống với các nút ở trên
+
+    .profile-avatar {
+        width: 96px;
+        height: 96px;
+        border-radius: 50%;
+        object-fit: cover;
+        // Đổi viền thành màu trắng
+        border: 2px solid $white;
+        margin-bottom: 1rem;
+    }
+    .profile-username {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+    .social-links {
+        display: flex;
+        gap: 1.5rem;
+        font-size: 1.5rem;
+    }
+}
+
+// --- Tiêu đề Collection ---
+.collection-section {
+    margin-bottom: 2.5rem;
+}
+
+.collection-title {
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    // Bỏ style dạng nút viên thuốc
+}
+
+// --- Lưới sản phẩm ---
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+// --- QR Code ---
+.qr-code-section {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    text-align: center;
+
+    span {
+        font-size: 0.8rem;
+        font-weight: 500;
+        display: block;
+        margin-bottom: 0.5rem;
+    }
+    .qr-code {
+        width: 80px;
+        height: 80px;
+        border: 4px solid $white;
+        border-radius: $border-radius-md;
+    }
+}
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: none;
+    border: none;
+    color: $text-secondary-color;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 1.5rem; // Khoảng cách với Subcategory bên dưới
+
+    &:hover {
+        color: $text-color;
+    }
+}

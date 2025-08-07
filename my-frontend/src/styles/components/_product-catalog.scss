@@ -1,0 +1,40 @@
+.product-catalog-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.catalog-button {
+    background-color: $product-card-bg;
+    border: none;
+    border-radius: $border-radius-lg;
+    padding: 1.25rem 1.5rem;
+    width: 100%;
+    cursor: pointer;
+    transition: transform 0.2s ease-out;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    &:hover {
+        transform: scale(1.02);
+    }
+}
+
+.catalog-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: $text-color;
+    padding: 0 2rem;
+}
+
+.catalog-options-icon {
+    font-size: 1.5rem;
+    color: $text-secondary-color;
+    position: absolute;
+    right: 1.5rem; 
+    top: 50%;
+    transform: translateY(-50%); 
+}

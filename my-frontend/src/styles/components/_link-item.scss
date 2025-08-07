@@ -1,0 +1,113 @@
+.link-item {
+    background-color: $white;
+    border: 1px solid $border-color;
+    border-radius: $border-radius-lg;
+    padding: 1rem 1.5rem;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column; 
+    gap: 0.5rem; 
+}
+
+
+.link-row {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+
+.drag-handle, .drag-handle-placeholder {
+    color: $text-secondary-color;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+    width: 32px; 
+}
+
+.top-row {
+    .link-title {
+        font-weight: 600;
+        font-size: 1rem;
+        flex-grow: 1; 
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        .edit-icon {
+            font-size: 0.9rem;
+            color: $text-secondary-color;
+            cursor: pointer;
+            visibility: hidden; 
+        }
+    }
+    
+    &:hover .link-title .edit-icon {
+        visibility: visible;
+    }
+
+    .top-actions {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+}
+
+.middle-row {
+    .link-url {
+        color: $text-secondary-color;
+        font-size: 0.9rem;
+        text-decoration: none;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        .edit-icon {
+            font-size: 0.9rem;
+            color: $text-secondary-color;
+            cursor: pointer;
+            visibility: hidden;
+        }
+    }
+    &:hover .link-url .edit-icon {
+        visibility: visible;
+    }
+}
+
+.bottom-row {
+    margin-top: 0.5rem;
+    .bottom-actions {
+        display: flex;
+        align-items: center;
+        gap: 1.25rem;
+        color: $text-secondary-color;
+        font-size: 0.8rem;
+        flex-grow: 1; 
+    }
+    .delete-action {
+        margin-left: auto; 
+    }
+}
+
+.btn-icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: $text-secondary-color;
+    font-size: 1.1rem;
+    padding: 0.25rem;
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+
+    &:hover {
+        color: $text-color;
+        background-color: #f3f4f6;
+    }
+    
+    &.highlight {
+        color: $primary-color;
+    }
+}

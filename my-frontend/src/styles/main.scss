@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import 'variables';
+
+body, h1, h2, h3, h4, p, ul, li {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    color: #111827;
+}
+* {
+    box-sizing: border-box;
+}
+
+
+@import './layouts/admin-layout';
+@import './pages/admin-links-page';
+@import './components/common';
+@import './components/header';
+@import './components/sidebar';
+@import './components/link-item';
+@import './components/mobile-preview';
+@import './pages/product-page';
+@import './components/product-card';
+@import './components/product-catalog';
+@import './components/product-subcategory';
+
+
+@import 'responsive';
