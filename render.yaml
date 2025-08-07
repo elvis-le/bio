@@ -2,7 +2,7 @@ services:
   - type: web
     name: linktree-app
     env: docker
-    repo: https://github.com/your-username/your-repo
+    repo: https://github.com/elvis-le/bio.git
     dockerfilePath: Dockerfile
     buildCommand: ""
     startCommand: ""
