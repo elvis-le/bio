@@ -19,6 +19,7 @@ const ProductPage = () => {
     const [subcategories, setSubcategories] = useState([]);
     const [products, setProducts] = useState([]);
         const [error, setError] = useState('');
+        const [showProduct, setShowProduct] = useState(catalogs);
 
     
     const [filteredProducts, setFilteredProducts] = useState([]);
@@ -27,7 +28,7 @@ const ProductPage = () => {
     const fetchCatalogs = async () => {
       try {
         
-        const response = await axios.get('https://bio-aobe.onrender.com/api/catalogs', {
+        const response = await axios.get('http://localhost:5000/api/catalogs', {
           headers: {
 
           },
@@ -43,7 +44,7 @@ const ProductPage = () => {
     const fetchProducts = async () => {
       try {
 
-        const response = await axios.get('https://bio-aobe.onrender.com/api/products', {
+        const response = await axios.get('http://localhost:5000/api/products', {
           headers: {
 
           },
@@ -60,7 +61,7 @@ const ProductPage = () => {
 
     const handleCatalogSelect = async (catalogId) => {
       try {
-        const response = await axios.get('https://bio-aobe.onrender.com/api/subcategories', {
+        const response = await axios.get('http://localhost:5000/api/subcategories', {
           headers: {
             
           },
@@ -85,10 +86,14 @@ const ProductPage = () => {
         setFilteredProducts(newFilteredProducts);
     };
     const handleGoBack = () => {
-        setSelectedCatalog(null);
+      if (selectedCatalog !== null && selectedSubcategory !== null){
         setSelectedSubcategory(null);
-        setFilteredProducts([]);
+      }
+      else {
+        setSelectedCatalog(null);
+      }
     };
+
   return (
     <div className="product-page-background">
         {error && <p>{error}</p>}
@@ -113,15 +118,18 @@ const ProductPage = () => {
                   catalogs={catalogs}
                   onCatalogSelect={handleCatalogSelect}
               />
-          ) : (
-              <>
-                
-                <button onClick={handleGoBack} className="back-button">
-                  <FaArrowLeft/> Back to Catalogs
-                </button>
+          ): (
+              <button onClick={handleGoBack} className="back-button">
+                <FaArrowLeft/> Back to Catalogs
+              </button>
+          )}
 
-                <Subcategory
-                    subcategories={subcategories}
+        {selectedCatalog && !selectedSubcategory && (
+            <>
+
+
+              <Subcategory
+                  subcategories={subcategories}
                     onSubcategorySelect={handleSubcategorySelect}
                     activeSubcategoryId={selectedSubcategory ? selectedSubcategory.id : null}
                 />
