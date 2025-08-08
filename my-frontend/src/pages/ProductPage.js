@@ -142,11 +142,27 @@ const ProductPage = () => {
                 <header className="profile-header">
                     <img src={pageData.profile.avatar} alt="Avatar" className="profile-avatar"/>
                     <h1 className="profile-username">@{pageData.profile.username}</h1>
-                    <div className="social-links">
-                        <FaTiktok/>
-                        <FaInstagram/>
-                        <FaFacebookF/>
-                    </div>
+<ul className="social-links">
+    <li className="icon facebook">
+        <span className="tooltip">Facebook</span>
+        <a href="https://www.facebook.com/profile.php?id=61578834114911" className="facebook">
+            <FaFacebookF/>
+        </a>
+    </li>
+    <li className="icon tiktok">
+        <span className="tooltip">Tiktok</span>
+        <a href="https://www.tiktok.com/@dancedeiva?is_from_webapp=1&sender_device=pc" className="tiktok">
+            <FaTiktok/>
+        </a>
+    </li>
+    <li className="icon instagram">
+        <span className="tooltip">Instagram</span>
+        <a href="https://www.instagram.com/chang_mac_gi_hom_nay/" className="instagram">
+            <FaInstagram/>
+        </a>
+    </li>
+</ul>
+
                 </header>
 
 

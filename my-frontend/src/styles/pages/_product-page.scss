@@ -68,11 +68,110 @@
     margin-bottom: 1rem;
   }
 
-  .social-links {
-    display: flex;
-    gap: 1.5rem;
-    font-size: 1.5rem;
+  /* From Uiverse.io by david-mohseni */
+.social-links {
+  display: inline-flex;
+  list-style: none;
+  height: 3rem;
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+  justify-content: center;
+}
+
+.social-links .icon {
+  position: relative;
+  background: #fff;
+  border-radius: 50%;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  width: 3rem;
+  height: 3rem;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  a{
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
   }
+  .facebook{
+      color: #1877f2;
+    }
+    .tiktok{
+      color: rgba(44, 5, 183, 1);
+    }
+    .instagram{
+      color: #e4405f;
+    }
+}
+
+.social-links .tooltip {
+  position: absolute;
+  top: 0;
+  font-size: 14px;
+  background: #fff;
+  color: #fff;
+  padding: 15px 8px;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.social-links .tooltip::before {
+  position: absolute;
+  content: "";
+  height: 8px;
+  width: 8px;
+  background: #fff;
+  bottom: -3px;
+  left: 50%;
+  transform: translate(-50%) rotate(45deg);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.social-links .icon:hover .tooltip {
+  top: -4rem;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.social-links .icon:hover span,
+.social-links .icon:hover .tooltip {
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+}
+
+.social-links .facebook:hover,
+.social-links .facebook:hover .tooltip,
+.social-links .facebook:hover .tooltip::before {
+  background: #1877f2;
+  color: #fff;
+}
+
+.social-links .tiktok:hover,
+.social-links .tiktok:hover .tooltip,
+.social-links .tiktok:hover .tooltip::before {
+  background: rgba(44, 5, 183, 1);
+  color: #fff;
+}
+
+.social-links .instagram:hover,
+.social-links .instagram:hover .tooltip,
+.social-links .instagram:hover .tooltip::before {
+  background: #e4405f;
+  color: #fff;
+}
+
 }
 
 // --- Tiêu đề Collection ---
