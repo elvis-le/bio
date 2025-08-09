@@ -31,7 +31,7 @@ const ProductPage = () => {
         const fetchCatalogs = async () => {
             try {
 
-                const response = await axios.get('https://bio-aobe.onrender.com/api/catalogs', {
+                const response = await axios.get('http://localhost:5000/api/catalogs', {
                     headers: {},
                 });
                 setCatalogs(response.data);
@@ -47,7 +47,7 @@ const ProductPage = () => {
         const fetchProducts = async () => {
             try {
 
-                const response = await axios.get('https://bio-aobe.onrender.com/api/products', {
+                const response = await axios.get('http://localhost:5000/api/products', {
                     headers: {},
                 });
                 setProducts(response.data);
@@ -94,7 +94,7 @@ const ProductPage = () => {
 
     const handleCatalogSelect = async (catalogId) => {
         try {
-            const response = await axios.get('https://bio-aobe.onrender.com/api/subcategories', {
+            const response = await axios.get('http://localhost:5000/api/subcategories', {
                 headers: {},
                 params: {catalog_id: catalogId},
             });

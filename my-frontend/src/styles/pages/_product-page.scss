@@ -1,6 +1,3 @@
-// src/styles/pages/_product-page.scss
-
-// --- Nền Trang ---
 .product-page-background {
   background-color: #d3c4b4;
   min-height: 100vh;
@@ -9,20 +6,17 @@
   justify-content: center;
 }
 
-// --- Khung Nội Dung Chính ---
 .page-container {
   width: 100%;
   max-width: 768px;
   position: relative;
-
-  background-color: $product-bg; // Màu nền cam nhạt hơn
-  border-radius: 24px; // Bo góc lớn
-  padding: 3rem; // Tạo khoảng cách bên trong khung
+  background-color: $product-bg;
+  border-radius: 24px;
+  padding: 3rem;
 }
 
-// --- Các Nút Ở Góc ---
 .top-actions {
-  position: absolute; // Đặt vị trí tương đối với .page-container
+  position: absolute;
   top: 1.5rem;
   left: 1.5rem;
   right: 1.5rem;
@@ -44,20 +38,18 @@
   }
 }
 
-// --- Header Profile ---
 .profile-header {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 2rem 0;
-  padding-top: 3rem; // Thêm khoảng trống với các nút ở trên
+  padding-top: 3rem;
 
   .profile-avatar {
     width: 96px;
     height: 96px;
     border-radius: 50%;
     object-fit: cover;
-    // Đổi viền thành màu trắng
     border: 2px solid $white;
     margin-bottom: 1rem;
   }
@@ -67,8 +59,8 @@
     font-weight: 600;
     margin-bottom: 1rem;
   }
+}
 
-  /* From Uiverse.io by david-mohseni */
 .social-links {
   display: inline-flex;
   list-style: none;
@@ -76,150 +68,105 @@
   width: 100%;
   font-family: "Poppins", sans-serif;
   justify-content: center;
-}
 
-.social-links .icon {
-  position: relative;
-  background: #fff;
-  border-radius: 50%;
-  margin-left: 1rem;
-  margin-right: 1rem;
-  width: 3rem;
-  height: 3rem;
-  font-size: 18px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  a{
-  width: 3rem;
-  height: 3rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  }
-  .facebook{
-      color: #1877f2;
+  .icon {
+    position: relative;
+    background: #fff;
+    border-radius: 50%;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: 3rem;
+    height: 3rem;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    a {
+      width: 3rem;
+      height: 3rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
     }
-    .tiktok{
-      color: rgba(44, 5, 183, 1);
-    }
-    .instagram{
-      color: #e4405f;
-    }
-}
-
-.social-links .tooltip {
-  position: absolute;
-  top: 0;
-  font-size: 14px;
-  background: #fff;
-  color: #fff;
-  padding: 15px 8px;
-  border-radius: 5px;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-  opacity: 0;
-  pointer-events: none;
-  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-.social-links .tooltip::before {
-  position: absolute;
-  content: "";
-  height: 8px;
-  width: 8px;
-  background: #fff;
-  bottom: -3px;
-  left: 50%;
-  transform: translate(-50%) rotate(45deg);
-  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-.social-links .icon:hover .tooltip {
-  top: -4rem;
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-}
-
-.social-links .icon:hover span,
-.social-links .icon:hover .tooltip {
-  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
-}
-
-.social-links .facebook:hover,
-.social-links .facebook:hover .tooltip,
-.social-links .facebook:hover .tooltip::before {
-  background: #1877f2;
-  color: #fff;
-}
-
-.social-links .tiktok:hover,
-.social-links .tiktok:hover .tooltip,
-.social-links .tiktok:hover .tooltip::before {
-  background: rgba(44, 5, 183, 1);
-  color: #fff;
-}
-
-.social-links .instagram:hover,
-.social-links .instagram:hover .tooltip,
-.social-links .instagram:hover .tooltip::before {
-  background: #e4405f;
-  color: #fff;
-}
-
-}
-
-// --- Tiêu đề Collection ---
-.collection-section {
-  margin-bottom: 2.5rem;
-}
-
-.collection-title {
-  text-align: center;
-  font-weight: 600;
-  margin-bottom: 1.5rem;
-}
-
-// --- Lưới sản phẩm ---
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
-}
-
-// --- QR Code ---
-.qr-code-section {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  text-align: center;
-
-  span {
-    font-size: 0.8rem;
-    font-weight: 500;
-    display: block;
-    margin-bottom: 0.5rem;
+    .facebook { color: #1877f2; }
+    .tiktok { color: rgba(44, 5, 183, 1); }
+    .instagram { color: #e4405f; }
   }
 
-  .qr-code {
-    width: 80px;
-    height: 80px;
-    border: 4px solid $white;
-    border-radius: $border-radius-md;
+  .tooltip {
+    position: absolute;
+    top: 0;
+    font-size: 14px;
+    background: #fff;
+    color: #fff;
+    padding: 15px 8px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .tooltip::before {
+    position: absolute;
+    content: "";
+    height: 8px;
+    width: 8px;
+    background: #fff;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .icon:hover .tooltip {
+    top: -4rem;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .icon:hover span,
+  .icon:hover .tooltip {
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  .facebook:hover,
+  .facebook:hover .tooltip,
+  .facebook:hover .tooltip::before {
+    background: #1877f2;
+    color: #fff;
+  }
+
+  .tiktok:hover,
+  .tiktok:hover .tooltip,
+  .tiktok:hover .tooltip::before {
+    background: rgba(44, 5, 183, 1);
+    color: #fff;
+  }
+
+  .instagram:hover,
+  .instagram:hover .tooltip,
+  .instagram:hover .tooltip::before {
+    background: #e4405f;
+    color: #fff;
   }
 }
 
-.function-bar{
+.function-bar {
   display: flex;
   width: 100%;
-  height: 3rem;
+  height: auto; 
   margin-bottom: 1rem;
   justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; 
+  gap: 1rem; 
 }
 
 .back-button {
@@ -240,6 +187,7 @@
   height: 2.8em;
   padding-right: 1.2em;
   cursor: pointer;
+  flex-shrink: 0;
 
   .icon {
     background: white;
@@ -253,56 +201,62 @@
     border-radius: 0.7em;
     box-shadow: 0.1em 0.1em 0.6em 0.2em $product-card-bg;
     transition: all 0.3s;
-
     svg {
       width: 1.1em;
       transition: transform 0.3s;
       color: #7b52b9;
     }
   }
+
+  &:hover .icon {
+    width: calc(100% - 0.6em);
+  }
+  &:hover .icon svg {
+    transform: translateX(0.1em);
+  }
+  &:active .icon {
+    transform: scale(0.95);
+  }
 }
 
-.back-button:hover .icon {
-  width: calc(100% - 0.6em);
+#poda {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto; 
+  position: relative; 
+  max-width: 25rem; 
+  flex-grow: 1;
 }
 
-.back-button:hover .icon svg {
-  transform: translateX(0.1em);
+#main{
+  width: 100%;
 }
 
-.back-button:active .icon {
-  transform: scale(0.95);
+.input {
+  background-color: $product-bg;
+  border: none;
+  width: 100%; 
+  height: 3rem;
+  border-radius: 10px;
+  padding-inline: 59px;
+  font-size: 18px;
+  &:focus {
+    outline: none;
+  }
 }
+
 
 .white,
 .border,
 .darkBorderBg,
 .glow {
   height: calc(3rem + 14px);
-  width: calc(55rem + 13px);
+  width: calc(100% + 13px);
   position: absolute;
   overflow: hidden;
   border-radius: 12px;
   filter: blur(3px);
-}
-.input {
-  background-color: $product-bg;
-  border: none;
-  width: 25rem;
-  height: 3rem;
-  border-radius: 10px;
-  padding-inline: 59px;
-  font-size: 18px;
-}
-#poda {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-left: auto;
-}
-
-.input:focus {
-  outline: none;
 }
 
 #main:focus-within > #input-mask {
@@ -311,7 +265,7 @@
 
 #input-mask {
   pointer-events: none;
-  width: calc(25rem - 1.5rem);
+  width: calc(100% - 1.5rem);
   height: calc(3rem - .4rem);
   position: absolute;
   background: linear-gradient(90deg, transparent, $product-bg);
@@ -321,8 +275,8 @@
 }
 #pink-mask {
   pointer-events: none;
-  width: 2.8rem;
-  height: 2.8rem;
+  width: 20%;
+  height: 20%;
   position: absolute;
   background: #ffed00;
   top: .1rem;
@@ -337,7 +291,7 @@
 
 .white {
   max-height: calc(3rem + 7px);
-  max-width: calc(25rem + 6px);
+  max-width: calc(100% + 6px);
   border-radius: 10px;
   filter: blur(2px);
 }
@@ -367,7 +321,7 @@
 }
 .border {
   max-height: calc(3rem + 3px);
-  max-width: calc(25rem + 2px);
+  max-width: calc(100% + 2px);
   border-radius: 11px;
   filter: blur(0.5px);
 }
@@ -396,7 +350,7 @@
 }
 .darkBorderBg {
   max-height: calc(3rem + 9px);
-  max-width: calc(25rem + 11px);
+  max-width: calc(100% + 11px);
 }
 .darkBorderBg::before {
   content: "";
@@ -468,7 +422,7 @@
   filter: blur(30px);
   opacity: 0.4;
   max-height: calc(3rem + 74px);
-  max-width: calc(25rem + 53px);
+  max-width: calc(100% + 53px);
 }
 .glow:before {
   content: "";
@@ -582,5 +536,76 @@
   position: absolute;
   left: 10px;
   top: 12px;
+  z-index: 1; 
 }
 
+.collection-section {
+  margin-bottom: 2.5rem;
+}
+
+.collection-title {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.qr-code-section {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  text-align: center;
+  z-index: 5;
+  span {
+    font-size: 0.8rem;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  .qr-code {
+    width: 80px;
+    height: 80px;
+    border: 4px solid $white;
+    border-radius: $border-radius-md;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .product-page-background {
+    padding: 1rem;
+  }
+  .page-container {
+    padding: 1.5rem;
+  }
+  .qr-code-section {
+    display: none; 
+  }
+}
+
+@media (max-width: 480px) {
+  .page-container {
+    padding: 1rem;
+  }
+  .function-bar {
+    flex-direction: column; 
+    align-items: stretch; 
+  }
+  #poda {
+    margin-left: 0; 
+    max-width: 100%;
+  }
+  .product-grid {
+    grid-template-columns: 1fr; 
+  }
+  .top-actions {
+    top: 1rem;
+    left: 1rem;
+    right: 1rem;
+  }
+}
